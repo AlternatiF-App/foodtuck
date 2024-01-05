@@ -5,7 +5,7 @@ import { PiHandbag } from 'react-icons/pi'
 
 const Header = () => {
   return (
-    <header className='py-12 bg-black-2'>
+    <header className='pt-12 pb-4 bg-black-2'>
       <div className='container mx-auto flex justify-center items-center'>
         <Image
           src='images/logo.svg'

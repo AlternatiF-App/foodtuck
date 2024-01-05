@@ -73,7 +73,7 @@ const getSize = (size: textSize) => {
     case 'banner':
       return 'text-2xl md:text-5xl lg:text-6xl'
     case 'h0':
-      return 'text-xl md:text-3xl lg:text-5xl'
+      return 'text-xl md:text-3xl lg:text-4xl'
     case 'h1':
       return 'text-2xl'
     case 'h2':

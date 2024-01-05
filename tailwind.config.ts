@@ -32,6 +32,9 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        'great-vibes': 'Great Vibes, cursive',
+      },
       colors: {
         'brand-primary-1': '#FF9F0D',
         'brand-secondary-1': '#AF872F',

@@ -1,56 +1,83 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { cva, type VariantProps } from "class-variance-authority"
+'use client'
 
-import { cn } from "@/lib/utils"
+import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
+import { cn } from '@/lib/utils'
 
-const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300",
-  {
-    variants: {
-      variant: {
-        default: "bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
-        destructive:
-          "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
-        outline:
-          "border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
-        secondary:
-          "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
-        ghost: "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
-        link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
-      },
-      size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
+type typeVariant = 'primary' | 'secondary' | 'disabled'
+type typeSize = 'primary' | 'default' | 'auth' | 'icon'
+type typeRounded = 'full' | '2XS' | 'XS' | 'S' | 'M' | 'L' | 'XL' | '2XL' | '3XL' | '4XL' | '5XL'
+
+const getVariants = (variant: typeVariant) => {
+  switch (variant) {
+    case 'primary':
+      return 'bg-brand-primary-3 text-black-2'
+    case 'secondary':
+      return 'bg-white text-neutral-700 border border-neutral-200 hover:border-neutral-700 focus:bg-neutral-50 focus:border-neutral-600'
+    case 'disabled':
+      return 'bg-neutral-200 text-white'
   }
-)
+}
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+
+const getSize = (size: typeSize) => {
+  switch (size) {
+    case 'primary':
+      return 'px-4 py-2 w-full'
+    case 'default':
+      return 'px-14 py-4'
+    case 'auth':
+      return 'w-full lg:w-[240px] py-2'
+    case 'icon':
+      return 'h-[40px] w-[40px]'
+  }
+}
+
+const getRounded = (rounded: typeRounded) => {
+  switch (rounded) {
+    case 'full':
+      return 'rounded-full'
+  }
+}
+
+export interface ButtonProps {
+  className?: string
+  variant?: typeVariant
+  size?: typeSize
+  rounded?: typeRounded
   asChild?: boolean
+  disabled?: boolean
+  children: JSX.Element
+  onClick? :Function
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+  ({ className, variant = 'primary', size = 'default', rounded = 'full', asChild = false, disabled = false, children, onClick = () => {}, ...props }, ref) => {
+    const Comp = asChild ? Slot : 'button'
+
+    const classname = cn(
+      getVariants(disabled ? 'disabled' : variant),
+      getSize(size),
+      getRounded(rounded),
+      className,
+      'relative'
+    )
+
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        id='btn-submit'
+        className={classname}
         ref={ref}
+        disabled={disabled}
+        type='submit'
+        onClick={() => onClick()}
         {...props}
-      />
+      >
+        { children }
+      </Comp>
     )
   }
 )
-Button.displayName = "Button"
+Button.displayName = 'Button'
 
-export { Button, buttonVariants }
+export { Button }
