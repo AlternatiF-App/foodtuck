@@ -1,4 +1,5 @@
 import CardChoose from '@/components/molecules/card-choose'
+import CardFood from '@/components/molecules/card-food'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import Text from '@/components/ui/text'
@@ -188,30 +189,153 @@ const Home = () => {
           <span className='text-brand-primary-3'>Ch</span>oose Food Item
         </Text>
         <div className='flex space-x-8 mt-14'>
-          <CardChoose
+          <CardFood
             image='images/food/food-1.svg'
             alt='food-1'
             discount='30%'
             title='Fast Food Dish'
           />
-          <CardChoose
+          <CardFood
             image='images/food/food-2.svg'
             alt='food-2'
             discount='30%'
             title='Fast Food Dish'
           />
-          <CardChoose
+          <CardFood
             image='images/food/food-3.svg'
             alt='food-3'
             discount='30%'
             title='Fast Food Dish'
           />
-          <CardChoose
+          <CardFood
             image='images/food/food-4.svg'
             alt='food-4'
             discount='30%'
             title='Fast Food Dish'
           />
+        </div>
+      </section>
+
+      {/* Choose Us */}
+      <section id='choose-us' className='flex container mx-auto py-16 space-x-4'>
+        <div className='w-1/2 space-y-4'>
+          <div className='grid grid-cols-2 gap-x-4 place-items-baseline'>
+            <Image
+              src='images/choose/choose-1.svg'
+              alt='choose-1'
+              title='choose-1'
+              height={356}
+              width={362}
+            />
+            <Image
+              src='images/choose/choose-2.svg'
+              alt='choose-2'
+              title='choose-2'
+              height={231}
+              width={281}
+            />
+          </div>
+          <div className='grid grid-cols-3 gap-x-4'>
+            <Image
+              src='images/choose/choose-3.svg'
+              alt='choose-3'
+              title='choose-3'
+              height={306}
+              width={244}
+            />
+            <Image
+              src='images/choose/choose-4.svg'
+              alt='choose-4'
+              title='choose-4'
+              height={226}
+              width={221}
+            />
+            <div className='space-y-4'>
+              <Image
+                src='images/choose/choose-5.svg'
+                alt='choose-5'
+                title='choose-5'
+                height={168}
+                width={161}
+              />
+              <Image
+                src='images/choose/choose-6.svg'
+                alt='choose-6'
+                title='choose-6'
+                height={168}
+                width={161}
+              />
+            </div>
+          </div>
+        </div>
+        <div className='w-1/2'>
+          <Text
+            size='h0'
+            className='font-great-vibes block'
+          >
+            Why Choose Us
+          </Text>
+          <Text
+            size='banner'
+            weight='600'
+            variant='white'
+            className='mt-2 block'
+          >
+            <span className='text-brand-primary-3'>Ex</span>ta ordinary taste And Experienced 
+          </Text>
+          <Text
+            size='h4'
+            variant='white'
+            weight='300'
+            className='mt-8 block text-justify'
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque diam pellentesque bibendum non dui volutpat fringilla bibendum. Urna, elit augue urna, vitae feugiat pretium donec id elementum. Ultrices mattis sed vitae mus risus. Lacus nisi, et ac dapibus sit eu velit in consequat.
+          </Text>
+          <div className='flex items-center space-x-8 mt-8'>
+            <CardChoose
+              icon='images/choose/ic-fast-food.svg'
+              alt='ic-fast-food'
+              title='Fast Food'
+            />
+            <CardChoose
+              icon='images/choose/ic-lunch.svg'
+              alt='ic-lunch'
+              title='Lunch'
+            />
+            <CardChoose
+              icon='images/choose/ic-dinner.svg'
+              alt='ic-dinner'
+              title='Dinner'
+            />
+          </div>
+          <div className='flex mt-8'>
+            <div className='px-2 py-6 bg-brand-primary-3 rounded-l-md' />
+            <div className='bg-white px-12 py-6 rounded-r-md flex items-center space-x-8'>
+              <Text
+                variant='primary'
+                size='banner'
+                weight='600'
+              >
+                30+
+              </Text>
+              <div>
+                <Text
+                  variant='black-2'
+                  size='h2'
+                  className='block'
+                >
+                  Years of
+                </Text>
+                <Text
+                  variant='black-2'
+                  size='h2'
+                  weight='600'
+                >
+                  Experienced
+                </Text>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
