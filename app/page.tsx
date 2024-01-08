@@ -1,3 +1,4 @@
+import CardChoose from '@/components/molecules/card-choose'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import Text from '@/components/ui/text'
@@ -46,7 +47,7 @@ const Home = () => {
             </Text>
             <Text
               size='banner'
-              weight='700'
+              weight='600'
               variant='white'
               className='mt-2 block'
             >
@@ -82,7 +83,7 @@ const Home = () => {
       </section>
 
       {/* About Us */}
-      <section id='about-us' className='flex items-center container mx-auto py-32 space-x-24'>
+      <section id='about-us' className='flex items-center container mx-auto py-16 space-x-24'>
         <div className='w-1/2'>
           <Text
             size='h0'
@@ -92,7 +93,7 @@ const Home = () => {
           </Text>
           <Text
             size='banner'
-            weight='700'
+            weight='600'
             variant='white'
             className='mt-2 block'
           >
@@ -167,6 +168,50 @@ const Home = () => {
               width={322}
             />
           </div>
+        </div>
+      </section>
+
+      {/* Food Category */}
+      <section id='food-category' className='flex flex-col items-center container mx-auto py-16'>
+        <Text
+          size='h0'
+          className='font-great-vibes block'
+        >
+          Food Category
+        </Text>
+        <Text
+          size='banner'
+          weight='600'
+          variant='white'
+          className='mt-2 block'
+        >
+          <span className='text-brand-primary-3'>Ch</span>oose Food Item
+        </Text>
+        <div className='flex space-x-8 mt-14'>
+          <CardChoose
+            image='images/food/food-1.svg'
+            alt='food-1'
+            discount='30%'
+            title='Fast Food Dish'
+          />
+          <CardChoose
+            image='images/food/food-2.svg'
+            alt='food-2'
+            discount='30%'
+            title='Fast Food Dish'
+          />
+          <CardChoose
+            image='images/food/food-3.svg'
+            alt='food-3'
+            discount='30%'
+            title='Fast Food Dish'
+          />
+          <CardChoose
+            image='images/food/food-4.svg'
+            alt='food-4'
+            discount='30%'
+            title='Fast Food Dish'
+          />
         </div>
       </section>
     </main>
