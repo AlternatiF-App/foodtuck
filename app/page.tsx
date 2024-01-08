@@ -1,5 +1,6 @@
 import CardChoose from '@/components/molecules/card-choose'
 import CardFood from '@/components/molecules/card-food'
+import CardInfo from '@/components/molecules/card-info'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import Text from '@/components/ui/text'
@@ -335,6 +336,38 @@ const Home = () => {
                 </Text>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Info Landing Page */}
+      <section id='info' className={`relative bg-cover bg-center bg-no-repeat bg-[url('/images/vector-info.svg')]`}>
+        <div className='bg-black-2 bg-opacity-75'>
+          <div className='container mx-auto py-16 flex items-center justify-center z-50 space-x-40'>
+            <CardInfo
+              icon='images/ic-chef.svg'
+              alt='ic-chef'
+              title='Professional Chefs'
+              subtitle='420'
+            />
+            <CardInfo
+              icon='images/ic-items.svg'
+              alt='ic-items'
+              title='Items of Food'
+              subtitle='320'
+            />
+            <CardInfo
+              icon='images/ic-experiences.svg'
+              alt='ic-experiences'
+              title='Years of Experiences'
+              subtitle='30+'
+            />
+            <CardInfo
+              icon='images/ic-happy-customers.svg'
+              alt='ic-happy-customers'
+              title='Happy Customers'
+              subtitle='220'
+            />
           </div>
         </div>
       </section>
