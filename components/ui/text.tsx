@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 import { cn } from '@/lib/utils'
 
 type Ref = HTMLSpanElement
-type textVariant = 'primary' | 'secondary' | 'black-1' | 'black-2' | 'black-3' | 'white' | 'nav'
+type textVariant = 'primary' | 'secondary' | 'black-1' | 'black-2' | 'black-3' | 'white' | 'nav' | 'blue'
 type textWeight = '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
 type textDecoration = 'underline' | 'italic' | ''
 type textSize = 'banner' | 'h0' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7'
@@ -33,6 +33,8 @@ const getVariant = (variant: textVariant) => {
       return 'text-black-3';
     case 'white':
       return 'text-white';
+    case 'blue':
+      return 'text-blue-500';
     case 'nav':
       return 'text-white hover:text-brand-primary-3 cursor-pointer'
   }
