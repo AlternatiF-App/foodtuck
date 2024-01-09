@@ -371,6 +371,128 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Menu */}
+      <section id='menu' className='container mx-auto py-16'>
+        <div className='flex flex-col items-center'>
+          <Text
+            size='h0'
+            className='font-great-vibes block'
+          >
+            Choose & Pick
+          </Text>
+          <Text
+            size='banner'
+            weight='600'
+            variant='white'
+            className='mt-2 block'
+          >
+            <span className='text-brand-primary-3'>Fr</span>om Our Menu
+          </Text>
+        </div>
+        <div className='mt-14'>
+          <nav className='flex space-x-28 items-center'>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Breakfast
+            </Text>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Lunch
+            </Text>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Dinner
+            </Text>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Dessert
+            </Text>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Drink
+            </Text>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Snack
+            </Text>
+            <Text
+              size='h4'
+              variant='nav'
+            >
+              Suops
+            </Text>
+          </nav>
+          <div className='grid grid-cols-3 mt-14'>
+            <div className='relative flex flex-col items-center'>
+              <Image
+                src='images/menu/menu-vector-2.svg'
+                alt='menu-vector-2'
+                title='menu-vector-2'
+                height={406}
+                width={515}
+                className=''
+              />
+              <Image
+                src='images/menu/menu-vector-1.svg'
+                alt='menu-vector-1'
+                title='menu-vector-1'
+                height={362}
+                width={366}
+                className='absolute top-0 p-4'
+              />
+            </div>
+            <div>
+              <div className='flex items-center space-x-4'>
+                <Image
+                  src='images/menu/menu-1.svg'
+                  alt='menu-1'
+                  title='menu-1'
+                  height={80}
+                  width={80}
+                />
+                <div className='space-y-1.5'>
+                  <Text
+                    size='h3'
+                    variant='white'
+                    weight='600'
+                    className='block'
+                  >
+                    Lettuce Leaf
+                  </Text>
+                  <Text
+                    size='h4'
+                    variant='white'
+                    className='block'
+                  >
+                    Lacus nisi, et ac dapibus velit in consequat.
+                  </Text>
+                  <Text
+                    size='h3'
+                    variant='primary'
+                    weight='600'
+                    className='block'
+                  >
+                    12.5$
+                  </Text>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
